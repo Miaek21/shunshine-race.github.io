@@ -8,19 +8,19 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    padding-top: 50px; /* Zwiększenie odstępu od góry */
+    padding-top: 50px; 
 }
 
 .title-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px; /* Odstęp poniżej tytułu */
-    width: 100%; /* Zapewnienie, że kontener zajmuje całą szerokość */
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .title-image {
-    max-width: 30%; /* Zmniejszenie szerokości obrazka */
+    max-width: 30%;
     height: auto;
 }
 
@@ -36,18 +36,18 @@ body {
     flex-direction: column;
     align-items: center;
     flex: 1;
-    margin: 0 20px; /* Dodany margines boczny */
+    margin: 0 20px;
 }
 
 .matchup {
-    margin: 20px 0; /* Zwiększony margines pionowy */
+    margin: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .team {
-    position: relative; /* Dodane pozycjonowanie względem team */
+    position: relative;
     background-color: #1e1e1e;
     color: #fff;
     padding: 10px 20px;
@@ -147,7 +147,7 @@ body {
 
     .round {
         align-items: center;
-        margin: 0 40px; /* Zwiększony margines boczny dla większych ekranów */
+        margin: 0 40px;
     }
 
     .round-label {
