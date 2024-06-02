@@ -15,6 +15,9 @@
         <h2>Kolejny mecz za:</h2>
         <div id="timer" class="timer"></div>
     </div>
+    <div class="live-button-container">
+        <a href="https://www.youtube.com/watch?v=5ebkMLk2vEI" target="_blank" class="live-button" onclick="playSound()">Oglądaj na ŻYWO</a>
+    </div>
     <div class="tournament-bracket">
         <div class="round round-16">
             <div class="matchup">
@@ -97,9 +100,6 @@
             <div class="round-label">Round of 16</div>
         </div>
     </div>
-    <div class="live-button-container">
-        <a href="https://www.youtube.com/@KostuGaming" target="_blank" class="live-button" onclick="playSound()">Oglądaj na ŻYWO</a>
-    </div>
     <div class="information-container">
         <h2>INFORMACJE:</h2>
         <p>Sunshine Race to turniej, w którym bierze udział 16 polskich speedrunnerów Minecrafta, walczących między sobą o pierwsze miejsce, aby wyłonić najlepszego z nich. Warto wspomnieć, że gramy na modyfikacji MCSR Ranked, która sprawia, że każdy zawodnik ma takie samo szczęście, aby gra była jak najbardziej kompetetywna.</p>
@@ -111,32 +111,32 @@
         }
 
         function startTimer() {
-    const targetTime = new Date();
-    targetTime.setHours(15, 0, 0, 0);
-    let intervalId;
+            const targetTime = new Date();
+            targetTime.setHours(15, 0, 0, 0);
+            let intervalId;
 
-    function updateTimer() {
-        const now = new Date();
-        let timeDifference = targetTime - now;
+            function updateTimer() {
+                const now = new Date();
+                let timeDifference = targetTime - now;
 
-        if (timeDifference <= 0) {
-            clearInterval(intervalId);
-            document.getElementById('timer').innerHTML = "0h 0m 0s";
-            return;
+                if (timeDifference <= 0) {
+                    clearInterval(intervalId);
+                    document.getElementById('timer').innerHTML = "0h 0m 0s";
+                    return;
+                }
+
+                const hours = Math.floor((timeDifference % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+                const minutes = Math.floor((timeDifference % (60 * 60 * 1000)) / (60 * 1000));
+                const seconds = Math.floor((timeDifference % (60 * 1000)) / 1000);
+
+                document.getElementById('timer').innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+            }
+
+            updateTimer();
+            intervalId = setInterval(updateTimer, 1000);
         }
 
-        const hours = Math.floor((timeDifference % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
-        const minutes = Math.floor((timeDifference % (60 * 60 * 1000)) / (60 * 1000));
-        const seconds = Math.floor((timeDifference % (60 * 1000)) / 1000);
-
-        document.getElementById('timer').innerHTML = `${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    updateTimer();
-    intervalId = setInterval(updateTimer, 1000);
-}
-
-document.addEventListener('DOMContentLoaded', startTimer);
+        document.addEventListener('DOMContentLoaded', startTimer);
     </script>
 </body>
 </html>
