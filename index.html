@@ -16,7 +16,7 @@
         <div id="timer" class="timer"></div>
     </div>
     <div class="live-button-container">
-        <a href="https://shunshine-race.github.io/Sunshine-Stream/" target="_blank" class="live-button" onclick="playSound()">Oglądaj na ŻYWO</a>
+        <a href="#" class="live-button" onclick="playSoundAndRedirect()">Oglądaj na ŻYWO</a>
     </div>
     <div class="tournament-bracket">
         <div class="round round-16">
@@ -106,13 +106,16 @@
     </div>
     <audio id="plateSound" src="plate_sound.mp3" preload="auto"></audio>
     <script>
-        function playSound() {
-            document.getElementById('plateSound').play();
+        function playSoundAndRedirect() {
+            const sound = document.getElementById('plateSound');
+            sound.play();
+            setTimeout(function() {
+                window.location.href = "https://shunshine-race.github.io/Sunshine-Stream/";
+            }, 1000); // 1000 ms = 1 s
         }
 
         function startTimer() {
-            const targetTime = new Date();
-            targetTime.setHours(15, 0, 0, 0);
+            const targetTime = new Date('2024-06-04T11:00:00');
             let intervalId;
 
             function updateTimer() {
@@ -121,15 +124,16 @@
 
                 if (timeDifference <= 0) {
                     clearInterval(intervalId);
-                    document.getElementById('timer').innerHTML = "0h 0m 0s";
+                    document.getElementById('timer').innerHTML = "0d 0h 0m 0s";
                     return;
                 }
 
+                const days = Math.floor(timeDifference / (24 * 60 * 60 * 1000));
                 const hours = Math.floor((timeDifference % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
                 const minutes = Math.floor((timeDifference % (60 * 60 * 1000)) / (60 * 1000));
                 const seconds = Math.floor((timeDifference % (60 * 1000)) / 1000);
 
-                document.getElementById('timer').innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+                document.getElementById('timer').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
 
             updateTimer();
