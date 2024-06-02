@@ -8,20 +8,20 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    padding-top: 50px; /* Zwiększenie odstępu od góry */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Dodany cień do tekstów */
+    padding-top: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .title-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px; /* Odstęp poniżej tytułu */
-    width: 100%; /* Zapewnienie, że kontener zajmuje całą szerokość */
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .title-image {
-    max-width: 30%; /* Zmniejszenie szerokości obrazka */
+    max-width: 30%;
     height: auto;
 }
 
@@ -29,13 +29,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px; /* Dodany margines poniżej timera */
+    margin-bottom: 20px;
     color: #fff;
 }
 
 .timer {
-    font-size: 2em; /* Zwiększenie rozmiaru czcionki timera */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Dodany cień do timera */
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .tournament-bracket {
@@ -50,18 +50,18 @@ body {
     flex-direction: column;
     align-items: center;
     flex: 1;
-    margin: 0 20px; /* Dodany margines boczny */
+    margin: 0 20px;
 }
 
 .matchup {
-    margin: 20px 0; /* Zwiększony margines pionowy */
+    margin: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .team {
-    position: relative; /* Dodane pozycjonowanie względem team */
+    position: relative;
     background-color: #1e1e1e;
     color: #fff;
     padding: 10px 20px;
@@ -71,7 +71,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
     width: 150px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Dodany cień do nazw drużyn */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .team:hover {
@@ -92,7 +92,7 @@ body {
     margin-top: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-size: 0.8em;
-    z-index: 10; /* Dodany z-index */
+    z-index: 10;
 }
 
 .team.loser {
@@ -106,7 +106,7 @@ body {
     font-size: 0.8em;
     font-weight: 700;
     text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Dodany cień do etykiet rund */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .finals .final {
@@ -124,7 +124,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 150px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Dodany cień do nazw finałowych drużyn */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .third-place {
@@ -136,7 +136,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 150px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Dodany cień do nazw drużyn trzeciego miejsca */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .live-button-container {
@@ -178,11 +178,11 @@ body {
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 1.2em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Dodany cień do nagłówka informacji */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .information-container p {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Dodany cień do treści informacji */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (min-width: 768px) {
@@ -193,7 +193,7 @@ body {
 
     .round {
         align-items: center;
-        margin: 0 40px; /* Zwiększony margines boczny dla większych ekranów */
+        margin: 0 40px;
     }
 
     .round-label {

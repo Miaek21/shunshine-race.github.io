@@ -112,14 +112,14 @@
 
         function startTimer() {
             const targetTime = new Date();
-            targetTime.setHours(15, 0, 0, 0); // Ustawia czas na 15:00
+            targetTime.setHours(15, 0, 0, 0);
 
             function updateTimer() {
                 const now = new Date();
                 let timeDifference = targetTime - now;
 
                 if (timeDifference < 0) {
-                    timeDifference += 24 * 60 * 60 * 1000; // Dodaj jeden dzień, jeśli czas jest przeszły
+                    timeDifference += 24 * 60 * 60 * 1000;
                 }
 
                 const hours = Math.floor((timeDifference % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
@@ -130,7 +130,7 @@
             }
 
             updateTimer();
-            setInterval(updateTimer, 1000); // Aktualizuj timer co sekundę
+            setInterval(updateTimer, 1000);
         }
 
         document.addEventListener('DOMContentLoaded', startTimer);
