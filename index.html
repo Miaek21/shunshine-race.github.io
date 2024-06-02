@@ -11,10 +11,14 @@
     <div class="title-container">
         <img src="minecraft_title.png" alt="Minecraft Title" class="title-image">
     </div>
+    <div class="timer-container">
+        <h2>Kolejny mecz za:</h2>
+        <div id="timer" class="timer"></div>
+    </div>
     <div class="tournament-bracket">
         <div class="round round-16">
             <div class="matchup">
-                <div class="team" data-pb="PB: 14:15">xSzymi</div>
+                <div class="team loser" data-pb="PB: 14:15">xSzymi</div>
                 <div class="team" data-pb="PB: 14:18">ErykGamer</div>
             </div>
             <div class="matchup">
@@ -79,7 +83,7 @@
                 <div class="team" data-pb="PB: 10:07">Pardon</div>
             </div>
             <div class="matchup">
-                <div class="team" data-pb="PB: 10:15">Ziu</div>
+                <div class="team loser" data-pb="PB: 10:15">Ziu</div>
                 <div class="team" data-pb="PB: 10:54">Suravil</div>
             </div>
             <div class="matchup">
@@ -94,7 +98,42 @@
         </div>
     </div>
     <div class="live-button-container">
-        <a href="https://www.youtube.com/@KostuGaming" target="_blank" class="live-button">Oglądaj na ŻYWO</a>
+        <a href="https://www.youtube.com/@KostuGaming" target="_blank" class="live-button" onclick="playSound()">Oglądaj na ŻYWO</a>
     </div>
+    <div class="information-container">
+        <h2>INFORMACJE:</h2>
+        <p>Sunshine Race to turniej, w którym bierze udział 16 polskich speedrunnerów Minecrafta, walczących między sobą o pierwsze miejsce, aby wyłonić najlepszego z nich. Warto wspomnieć, że gramy na modyfikacji MCSR Ranked, która sprawia, że każdy zawodnik ma takie samo szczęście, aby gra była jak najbardziej kompetetywna.</p>
+    </div>
+    <audio id="plateSound" src="plate_sound.mp3" preload="auto"></audio>
+    <script>
+        function playSound() {
+            document.getElementById('plateSound').play();
+        }
+
+        function startTimer() {
+            const targetTime = new Date();
+            targetTime.setHours(15, 0, 0, 0); // Ustawia czas na 15:00
+
+            function updateTimer() {
+                const now = new Date();
+                let timeDifference = targetTime - now;
+
+                if (timeDifference < 0) {
+                    timeDifference += 24 * 60 * 60 * 1000; // Dodaj jeden dzień, jeśli czas jest przeszły
+                }
+
+                const hours = Math.floor((timeDifference % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+                const minutes = Math.floor((timeDifference % (60 * 60 * 1000)) / (60 * 1000));
+                const seconds = Math.floor((timeDifference % (60 * 1000)) / 1000);
+
+                document.getElementById('timer').innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000); // Aktualizuj timer co sekundę
+        }
+
+        document.addEventListener('DOMContentLoaded', startTimer);
+    </script>
 </body>
 </html>
