@@ -17,12 +17,15 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    width: 100%;
+}
+
+.title-container a {
+    display: inline-block;
 }
 
 .title-image {
-    max-width: 25%;
-    height: auto;
+    width: 100%;
+    max-width: 480px;
 }
 
 .timer-container {
